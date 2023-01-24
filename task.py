@@ -51,7 +51,7 @@ URL = "http://127.0.0.1:5000/playlist"
 #     writeToCSVFile(dataFrame)
 #     return Response(json.dumps(res), mimetype='application/json')
 
-def parseInput(data: dict):
+def parseInput(data: dict) -> list:
     """Parse the input dictionary and create a list of lists"""
     csvEntryCount = len(data['id'])
     dataFrame = []
@@ -71,13 +71,13 @@ def writeToCSVFile(dataFrame: list):
     except IOError:
         print("The output file could not be read.")
 
-def readFromJSONFile():
+def readFromJSONFile() -> dict:
     """Reads the input JSON file"""
     with open(readJSONFilename, 'r') as jsonFile:
         data = json.loads(jsonFile.read())
     return data
 
-def getPlaylistDict(data: list):
+def getPlaylistDict(data: list) -> dict:
     """Creates a dict for the POST request"""
     return {
         "index": data[0],

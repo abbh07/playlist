@@ -8,7 +8,7 @@
 - playlist.csv: The CSV file which is created/updated for visualization purposes.
 - playlist.json: The input JSON file which has been provided.
 - README.md: This readme file. 
-- task.py: This file creates the CSV file for visualisation and POSTs the data to the flask service when it is up and running. This constitutes 1.1 section of the task.
+- task.py: This file creates the CSV file for visualisation and POSTs the data to the flask service when it is up and running. This constitutes 1.1 section of the task. I have implemented the complete project using a CSV file. Code for this has been commented in the task.py file. 
 - service/routes.py: This files holds all the required flask based REST APIs for the second part of the task.
 - service/models.py: This file holds the DAO layers for interacting with the MongoDB.
 - service/\__init\__.py: Init file for the module.

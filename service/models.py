@@ -77,9 +77,9 @@ class Playlist(MongoModel):
             if(results.count()):
                 return results[0]
             else:
-                return None
+                raise DataValidationError("Invalid request: Body of request contained bad or no data")
         except:
-            return None
+            raise DataValidationError("Invalid item: Body of request contained bad or no data")
 
     @classmethod
     def update(cls, title: str, rating: int):
@@ -93,6 +93,6 @@ class Playlist(MongoModel):
                 data.save()
                 return data
             else:
-                return None
+                raise DataValidationError("Invalid item: Body of request contained bad or no data")
         except:
-            return None
+            raise DataValidationError("Invalid item: Body of request contained bad or no data")
