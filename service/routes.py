@@ -51,7 +51,7 @@ def updateRating():
     title = payload['title']
     rating = payload['rating']
     playlist = Playlist.update(title, rating)
-    app.logger.info("Star rating updated: %s", playlist.serialise())
+    app.logger.info("Star rating updated: %s", playlist.serialize())
     return Response(json.dumps(playlist.serialize()), mimetype='application/json')
 
 @app.route('/playlist/add', methods=['POST'])
